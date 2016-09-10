@@ -97,7 +97,8 @@ The path of file or dir must be absolute path
 
 
 #### ```callback(path)```
-- ```path``` 
+- ```path```
+
 The absolute path of the files in the directory which is going to be compressed
 
 - return
