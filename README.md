@@ -13,7 +13,7 @@ npm install nodeJs-zip --save
 
 zip a file 
 ```javascript
-var nodeJsZip = require("nodejs-zip");
+var nodeJsZip = require("nodeJs-zip");
 
 var file = path.join(__dirname,"./file.js");
 
