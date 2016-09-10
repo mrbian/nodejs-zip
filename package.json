@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-zip",
+  "version": "1.0.0",
+  "description": "zip module of nodejs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/mrbian/nodejs-zip.git"
+  },
+  "keywords": [
+    "nodejs-zip"
+  ],
+  "author": "bian",
+  "license": "MIT",
+  "dependencies": {
+    "node-zip": "^1.1.1"
+  }
+}
