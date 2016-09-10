@@ -5,14 +5,14 @@ nodejs-zip
 ```nodeJsZip.zip``` and ```nodeJsZip.unzip``` is sync function
 
 ## Installation
-```
+```javascript
 npm install nodeJs-zip --save
 ``` 
 
 ## Usage
 
 zip a file 
-```
+```javascript
 var nodeJsZip = require("nodejs-zip");
 
 var file = path.join(__dirname,"./file.js");
@@ -21,7 +21,7 @@ nodeJsZip.zip(file);
 ```
 
 zip a directory
-```
+```javascript
 var nodeJsZip = require("nodejs-zip");
 
 var dir = path.join(__dirname,"./directory");
@@ -30,7 +30,7 @@ nodeJsZip.zip(dir);
 ```
 
 Zip file and directory
-```
+```javascript
 var nodeJsZip = require("nodejs-zip");
 
 var dir = path.join(__dirname,"./directory");
@@ -40,7 +40,7 @@ nodeJsZip.zip([dir,file]);
 ```
 
 unzip 
-```
+```javascript
 var callback = function(isDir,name,data){
     if(isDir){
     
@@ -58,7 +58,7 @@ nodeJsZip.unzip(path.join(__dirname,"./demo.zip"),callback);
 ```
 
 zip file with filter
-```
+```javascript
 var nodeJsZip = require("nodejs-zip");
 
 var dir = path.join(__dirname,"./directory");
