@@ -20,11 +20,17 @@ exports.zip = function (paths, options, callback) {
         paths = [paths];            // wrap it as array
     }
 
-    options = options || {dir: process.cwd(), name: "out", filter: false, encoding: "utf8"};
+    options = options || {
+            dir: options.dir || process.cwd(),
+            name: options.name || "out",
+            filter: options.filter || false,
+            encoding: options.encoding || "utf8"
+        };
 
     if (!options.hasOwnProperty("name")         // check options
         || !options.hasOwnProperty("filter")
-        || !options.hasOwnProperty("dir")) {
+        || !options.hasOwnProperty("dir")
+        || !options.hasOwnProperty("encoding")) {
         throw new Error("options is invalid");
     }
 
@@ -77,12 +83,12 @@ exports.zip = function (paths, options, callback) {
         zip.file(ext, fc);
     };
 
-    var pt;             // 存储临时的路径
+    var pt;             // the tmp path
     for (pt of paths) {
         if (!path.isAbsolute(pt)) {
-            throw new Error("path must be absolute");       // 必须是绝对路径
+            throw new Error("path must be absolute");       // it must be the absolute path
         }
-        read(pt);       // 读取
+        read(pt);       // read
     }
 
     var data = zip.generate({base64: false, compression: "DEFLATE"});
@@ -114,10 +120,10 @@ exports.unzip = function (file, callback) {
  * unzip big file by stream to save memory
  * @param file
  * @param callback
- *
+ * @param done
  * callback(isDir,filename,data)
  */
-exports.unzipBigFile = function (file, callback) {
+exports.unzipBigFile = function (file, callback,done) {
     var rd = fs.createReadStream(file, {
         encoding: "binary"
     });
@@ -136,6 +142,8 @@ exports.unzipBigFile = function (file, callback) {
             callback || callback(files[k].dir, files[k].name, files[k]._data);
 
         });
+
+        done || done();
     });
 
 };

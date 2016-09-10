@@ -4,7 +4,6 @@
  * @author mrbian
  * @createDate 2016.9.10
  */
-var should = require("should");
 var path = require("path");
 var fs = require("fs");
 var os = require("os");
@@ -84,7 +83,12 @@ describe("test zip and unzip",function(){
             .readdirSync(root)
             .forEach((e) => {
                 var p = path.join(root,e);
-                fs.stat().isDirectory() ? fs.unlinkSync(p) : fs.rmdirSync(p);
+                // if(fs.readdirSync().length !== 0) {
+                //     rmdirForce();
+                // }
+                fs.statSync(p).isDirectory() ? fs.rmdirSync(p) : fs.unlinkSync(p) ;
             });
+
+        fs.rmdirSync(root);
     });
 });
