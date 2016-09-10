@@ -7,4 +7,4 @@
 
 var nodeJsZip = require("./bin/index");
 
-module.exports = nodeJsZip;
+module.exports = nodeJsZip; 

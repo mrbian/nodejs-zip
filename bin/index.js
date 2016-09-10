@@ -122,7 +122,7 @@ exports.unzip = function (file, callback) {
  * @param callback
  * @param done
  * callback(isDir,filename,data)
- */
+ */ 
 exports.unzipBigFile = function (file, callback,done) {
     var rd = fs.createReadStream(file, {
         encoding: "binary"
