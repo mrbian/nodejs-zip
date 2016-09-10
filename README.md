@@ -22,7 +22,7 @@ nodeJsZip.zip(file);
 
 zip a directory
 ```javascript
-var nodeJsZip = require("nodejs-zip");
+var nodeJsZip = require("nodeJs-zip");
 
 var dir = path.join(__dirname,"./directory");
 
@@ -31,7 +31,7 @@ nodeJsZip.zip(dir);
 
 Zip file and directory
 ```javascript
-var nodeJsZip = require("nodejs-zip");
+var nodeJsZip = require("nodeJs-zip");
 
 var dir = path.join(__dirname,"./directory");
 var file = path.join(__dirname,"./file.js");
@@ -59,7 +59,7 @@ nodeJsZip.unzip(path.join(__dirname,"./demo.zip"),callback);
 
 zip file with filter
 ```javascript
-var nodeJsZip = require("nodejs-zip");
+var nodeJsZip = require("nodeJs-zip");
 
 var dir = path.join(__dirname,"./directory");
 var file = path.join(__dirname,"./file.js");
