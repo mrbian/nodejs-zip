@@ -6,7 +6,7 @@ nodejs-zip
 
 ## Installation
 ```
-npm install nodejs-zip --save
+npm install nodeJs-zip --save
 ```
 
 ## Usage
