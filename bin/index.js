@@ -20,7 +20,7 @@ exports.zip = function (paths, options, callback) {
         paths = [paths];            // wrap it as array
     }
 
-    options = options || {
+    options = {
             dir: options.dir || process.cwd(),
             name: options.name || "out",
             filter: options.filter || false,
