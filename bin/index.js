@@ -7,6 +7,8 @@
 var fs = require("fs");
 var path = require("path");
 
+require("node-zip");
+
 /**
  * zip file or directories
  * @param paths  The absolute path of file or directory,it can be an array
