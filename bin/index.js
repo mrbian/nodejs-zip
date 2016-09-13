@@ -58,12 +58,12 @@ exports.zip = function (paths, options, callback) {
 
         fs
             .readdirSync(p)
-            .filter((e) => {            // filter file by callback
+            .filter(function (e) {            // filter file by callback
                 if (options.filter && callback) {
                     return callback(path.join(p, e));
                 }
                 return true;
-            }).forEach((e) => {
+            }).forEach(function (e) {
             var tmp = path.join(p, e);
             if (fs.statSync(tmp).isDirectory()) {
                 var zt = z.folder(e);
@@ -110,7 +110,7 @@ exports.unzip = function (file, callback) {
     var z = new JSZip(rd, {base64: false, checkCRC32: true});
     var files = z.files;
 
-    Object.keys(files).forEach((k) => {
+    Object.keys(files).forEach(function (k) {
 
         callback && callback(files[k].dir, files[k].name, files[k]._data);
 
@@ -131,15 +131,15 @@ exports.unzipBigFile = function (file, callback,done) {
     });
     var dt = "";
 
-    rd.on("data", (d) => {
+    rd.on("data", function (d){
         dt += d;
     });
 
-    rd.on("end", () => {
+    rd.on("end", function () {
         var z = new JSZip(dt, {base64: false, checkCRC32: true});
         var files = z.files;
 
-        Object.keys(files).forEach((k) => {
+        Object.keys(files).forEach(function (k){
 
             callback || callback(files[k].dir, files[k].name, files[k]._data);
 
