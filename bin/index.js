@@ -95,7 +95,7 @@ exports.zip = function (paths, options, callback) {
 
     var data = zip.generate({base64: false, compression: "DEFLATE"});
 
-    fs.writeFileSync(path.join(options.dir, `${options.name}.zip`), data, "binary");
+    fs.writeFileSync(path.join(options.dir, options.name + ".zip"), data, "binary");
 };
 
 /**
